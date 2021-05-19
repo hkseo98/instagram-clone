@@ -4,6 +4,7 @@ import { Icon } from "native-base";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createAppContainer } from "react-navigation";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
 import HomeTab from "./AppTabNavigator/HomeTab";
 import SearchTab from "./AppTabNavigator/SearchTab";
@@ -11,15 +12,18 @@ import AddMediaTab from "./AppTabNavigator/AddMediaTab";
 import LikesTab from "./AppTabNavigator/LikesTab";
 import ProfileTab from "./AppTabNavigator/ProfileTab";
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: "#e91e63",
+        activeTintColor: "#111111",
+        showIcon: true,
+        showLabel: false,
       }}
+      tabBarPosition={"bottom"}
     >
       <Tab.Screen
         name="Home"
@@ -27,7 +31,7 @@ function MyTabs() {
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons name="home" color={color} size={20} />
           ),
         }}
       />
@@ -37,7 +41,7 @@ function MyTabs() {
         options={{
           tabBarLabel: "Search",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={size} />
+            <MaterialCommunityIcons name="magnify" color={color} size={20} />
           ),
         }}
       />
@@ -47,7 +51,7 @@ function MyTabs() {
         options={{
           tabBarLabel: "Add",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="plus" color={color} size={size} />
+            <MaterialCommunityIcons name="plus" color={color} size={20} />
           ),
         }}
       />
@@ -57,7 +61,7 @@ function MyTabs() {
         options={{
           tabBarLabel: "Likes",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="heart" color={color} size={size} />
+            <MaterialCommunityIcons name="heart" color={color} size={20} />
           ),
         }}
       />
@@ -67,7 +71,7 @@ function MyTabs() {
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <MaterialCommunityIcons name="account" color={color} size={20} />
           ),
         }}
       />
