@@ -80,27 +80,6 @@ function MyTabs() {
 }
 
 export default function MainScreen({ navigation }) {
-  const [count, setCount] = React.useState(0);
-
-  React.useLayoutEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <Icon
-          name="ios-camera"
-          onPress={() => setCount(count + 1)}
-          style={{ paddingLeft: 10 }}
-        />
-      ),
-      headerRight: () => (
-        <Icon
-          name="ios-send"
-          onPress={() => setCount(count + 1)}
-          style={{ paddingRight: 10 }}
-        />
-      ),
-    });
-  }, [count]);
-
   return <MyTabs></MyTabs>;
 }
 

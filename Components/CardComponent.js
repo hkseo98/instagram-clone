@@ -20,6 +20,10 @@ const CardComponent = ({ data }) => {
       <CardItem>
         <Left>
           <Thumbnail
+            style={{
+              borderColor: "#D5D7D4",
+              borderWidth: 2,
+            }}
             source={{
               uri: `https://steemitimages.com/u/${data.author}/avatar`,
             }}
@@ -45,7 +49,11 @@ const CardComponent = ({ data }) => {
         <Text style={{ fontWeight: "900" }}>{data.title}</Text>
       </CardItem>
       <CardItem>
-        <Text>{data.body.replace(/\n/g, " ").slice(0, 200)}</Text>
+        <Text>
+          {data.body_length > 200
+            ? data.body.replace(/\n/g, " ").slice(0, 200) + "..."
+            : data.body.replace(/\n/g, " ")}
+        </Text>
       </CardItem>
       <CardItem style={{ height: 45 }}>
         <Left>

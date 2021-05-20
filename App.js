@@ -10,12 +10,12 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="instagram"
-          component={MainScreen}
-          options={{ title: "Instagram" }}
-        />
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false, // 헤더 숨기기
+        }}
+      >
+        <Stack.Screen name="Instagram" component={MainScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
